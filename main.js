@@ -8,9 +8,22 @@ Vue.component('tabs', {
             <li><a>Documents</a></li>
         </ul>
     </div>
-    `
+    `,
+    created() {
+        this.tabs = this.$children
+    }
+});
+
+Vue.component('tab', {
+    template:`
+    <div><slot></slot><div>
+    `,
+    props: {
+        name: {required: true},
+    }
 });
 
 new Vue ({
     el: '#root'
 });
+
