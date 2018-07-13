@@ -1,16 +1,21 @@
 Vue.component('tabs', {
     template: `
-    <div class="tabs">
-        <ul>
-            <li class="is-active"><a>Pictures</a></li>
-            <li><a>Music</a></li>
-            <li><a>Videos</a></li>
-            <li><a>Documents</a></li>
-        </ul>
+    <div>
+        <div class="tabs">
+            <ul>
+                <li v-for="tab in tabs">
+                <a href="#">
+                {{tab.name}}
+                </a>
+            </ul>
+        </div>
+        <div class="tabs-details">
+            <slot></slot>
+        </div>
     </div>
     `,
     data() {
-        return {tabs: []}
+        return {tabs: []};
     },
     created() {
         this.tabs = this.$children
