@@ -9,6 +9,9 @@ Vue.component('tabs', {
         </ul>
     </div>
     `,
+    data() {
+        return {tabs: []}
+    },
     created() {
         this.tabs = this.$children
     }
